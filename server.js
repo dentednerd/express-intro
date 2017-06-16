@@ -1,10 +1,14 @@
-// eslint-disable no-console
+/* eslint-disable no-console */
 
 const express = require('express'),
 morgan = require('morgan'),
 mongoose = require('mongoose');
 
 const server = express();
+const router = require('./routes');
+
+server.set('views', './views');
+server.set('view engine', 'ejs');
 
 const DB_URI = 'mongodb://localhost:27017/express-intro';
 mongoose.connect(DB_URI, (err) => {
@@ -13,10 +17,8 @@ mongoose.connect(DB_URI, (err) => {
 });
 
 server.use(morgan('dev'));
-
-server.get('/hello', (req, res) => {
-    res.send('<h1>Hello from the server!</h1>');
-});
+server.use('/', express.static('public'));
+server.use(router);
 
 server.listen(3000, function () {
     console.log('Server listening on port 3000');

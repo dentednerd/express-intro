@@ -20,8 +20,12 @@
     "mocha": "^3.2.0"
   },
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.3",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.4",
     "mongoose": "^4.10.6",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "pidof": "^1.0.2"
   }
 }
