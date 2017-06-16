@@ -1,0 +1,26 @@
+{
+  "name": "express-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha ./spec/*",
+    "lint": "eslint --fix ./",
+    "precommit": "npm run lint && npm test",
+    "start": "nodemon server.js"
+  },
+  "author": "Jo Imlay",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-jsx": "0.0.2",
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.13.3",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "morgan": "^1.8.2"
+  }
+}
