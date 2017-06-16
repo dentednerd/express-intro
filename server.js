@@ -2,7 +2,8 @@
 
 const express = require('express'),
 morgan = require('morgan'),
-mongoose = require('mongoose');
+mongoose = require('mongoose'),
+bodyParser = require('body-parser');
 
 const server = express();
 const router = require('./routes');
@@ -17,7 +18,9 @@ mongoose.connect(DB_URI, (err) => {
 });
 
 server.use(morgan('dev'));
-server.use('/', express.static('public'));
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(express.static('public'));
+server.use(express.static('styles'));
 server.use(router);
 
 server.listen(3000, function () {

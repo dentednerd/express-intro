@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../../styles/style.css" />
+  <title>Add yourself!</title>
+  <style>
+    form {
+      display: inline-block;
+      border: 2px solid tomato;
+      padding: 10px;
+    }
+    .form-field {
+      margin-bottom: 10px;
+    }
+    form button {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 8px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add yourself to The List!</h1>
+  <form method="POST" action="/users">
+    <div class="form-field">
+      <label for="firstName">First Name</label>
+      <input name="firstName" type="text">
+    </div>
+    
+    <div class="form-field">
+      <label for="lastName">Last Name</label>
+      <input name="lastName" type="text">
+    </div>
+    
+    <div class="form-field">
+      <label for="avatarUrl">Avatar URL</label>
+      <input name="avatarUrl" type="text">
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

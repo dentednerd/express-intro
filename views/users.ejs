@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/style.css" />
-    <title><%=firstName%> <%=lastName%></title>
+    <title>THE LIST</title>
 </head>
 <body>
-    <h1><%=firstName%> <%=lastName%></h1>
-    <img src="<%=avatarUrl%>" alt="user-avatar">
-    <p>
-        <a href="/users">go back</a>
-    </p>
+    <h1>The List</h1>
+    <ul>
+    <% users.forEach(function (user) { %>
+        <li>
+        <a href="/users/<%=user.id%>"><%=user.firstName%> <%=user.lastName%></a>
+        </li>
+    <% }); %>
+    </ul>
 </body>
 </html>
