@@ -1,7 +1,16 @@
+// eslint-disable no-console
+
 const express = require('express'),
-morgan = require('morgan');
+morgan = require('morgan'),
+mongoose = require('mongoose');
 
 const server = express();
+
+const DB_URI = 'mongodb://localhost:27017/express-intro';
+mongoose.connect(DB_URI, (err) => {
+    if (err) return console.log(err);
+    console.log('Connected to DB: ', DB_URI);
+});
 
 server.use(morgan('dev'));
 
